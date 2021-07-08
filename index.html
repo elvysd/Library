@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+    <style>
+        @use "@material/button";
+        @include button.core-styles;
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
+
+    <head>
+        <title> 
+            Library App
+        </title>
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+
+    <header>
+        Library App
+    </header>
+
+    <main>
+        <body>
+            <form>
+                <button type="button" onclick=openModal()>
+                    Add Book
+                </button>
+            </form>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">x</span>
+                    <form>
+                        <h2> Add New Book</h2>
+                        <p> Book Title </p>
+                        <input type="text" id='newTitle'>
+                        <p> Author </p>
+                        <input type="text" id='newAuthor'>
+                        <p> Current Page </p>
+                        <input type="text" id='newCurrentPage'>
+                        <p> Total Page(s) </p>
+                        <input type="text" id='newTotalPages'>
+                        <input type="checkbox"> Completed
+                        <p></p>
+                        <button type="button" onclick=addBooktoLibrary() class='submit'>Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <p id="books">
+
+            </p>
+        </body>
+    </main>
+
+    <script src="script.js"></script> 
+</html>
