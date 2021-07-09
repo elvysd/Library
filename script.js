@@ -31,17 +31,38 @@ window.onclick = function(event) {
       modal.style.display = "none";
     }
   } 
-
+let i = 0;
 function addBooktoLibrary() {
     let title = document.getElementById("newTitle").value;
     console.log(title)
-    let author = document.getElementById('newAuthor');
-    let completedPages = document.getElementById('newCurrentPage');
-    let totalPages = document.getElementById('newTotalPages');
-    const  book1  = new Book(title, author, completedPages, totalPages);
-    // book1.sayBook();
-    myLibrary += book1;
-    document.getElementById("books").innerHTML = myLibrary;
+    let author = document.getElementById('newAuthor').value;
+    let completedPages = document.getElementById('newCurrentPage').value;
+    let totalPages = document.getElementById('newTotalPages').value;
 
+    let book1 = new Book(title, author, completedPages, totalPages);
+    myLibrary.push(book1);
+
+
+    const container = document.querySelector('#container');
+    const content = document.createElement('div');
+    content.classList.add('flex-container');
+    content.textContent = myLibrary[i].title;
+    container.appendChild(content);
+
+
+    const container2 = document.querySelector('.flex-container');
+    const content2 = document.createElement('p');
+    content2.classList.add('info-box');
+    content2.textContent = myLibrary[i].author;
+    container2.appendChild(content2);
+
+
+
+    //document.getElementById("card").innerHTML +=  myLibrary[i].title;
+    i++; 
+    // book1.sayBook();
     modal.style.display = "none";
 }
+
+
+
