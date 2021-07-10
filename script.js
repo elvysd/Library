@@ -31,6 +31,15 @@ window.onclick = function(event) {
       modal.style.display = "none";
     }
   } 
+
+  var card = document.getElementsByClassName("flex-container");
+
+  var cardClick = function() {
+      var attribute = document.getElementById("flex-container").getAttribute("info-box"); ;
+      console.log(attribute)
+      alert(attribute);
+  };
+
 let i = 0;
 function addBooktoLibrary() {
     let title = document.getElementById("newTitle").value;
@@ -71,10 +80,17 @@ function addBooktoLibrary() {
     container3.appendChild(content3);
 
 
+
     //document.getElementById("card").innerHTML +=  myLibrary[i].title;
     i++; 
+
     // book1.sayBook();
     modal.style.display = "none";
+    
+    card = document.getElementsByClassName("flex-container");
+    for (var z = 0; z < card.length; z++) {
+        card[z].addEventListener('click', cardClick, false);
+    }
 }
 
 document.getElementById('completeCheckbox').addEventListener('change', function(e) {
@@ -84,3 +100,9 @@ document.getElementById('completeCheckbox').addEventListener('change', function(
         document.getElementById('newTotalPages').value = Math.max(document.getElementById('newTotalPages').value,document.getElementById('newCurrentPage').value);
     }
 })
+
+
+
+
+
+

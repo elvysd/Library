@@ -49,6 +49,8 @@
   justify-content: center;
   margin-right: auto;
   margin-left: auto;
+
+
 }
 
 .flex-container {
@@ -128,5 +130,9 @@ header {
 
 #plus:hover {
   font-weight: bold; 
+}
 
+.info-box {
+  color: darkgray;
+  font-style: italic; 
 }
