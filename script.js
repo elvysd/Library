@@ -42,20 +42,33 @@ function addBooktoLibrary() {
     let book1 = new Book(title, author, completedPages, totalPages);
     myLibrary.push(book1);
 
-
     const container = document.querySelector('#container');
     const content = document.createElement('div');
     content.classList.add('flex-container');
     content.textContent = myLibrary[i].title;
     container.appendChild(content);
-
-
-    const container2 = document.querySelector('.flex-container');
+    
+    const container2 = document.querySelectorAll('.flex-container')[i];
     const content2 = document.createElement('p');
     content2.classList.add('info-box');
     content2.textContent = myLibrary[i].author;
     container2.appendChild(content2);
 
+    const container3 = document.querySelectorAll('.flex-container')[i];
+    const content3 = document.createElement('p');
+        if (Number(completedPages) >= Number(totalPages)) {
+            console.log(typeof(completedPages))
+            console.log(typeof(totalPages))
+            content3.classList.add('color-code');
+        }
+        else if (Number(completedPages) == 0)
+            content3.classList.add('incomplete-color-code');
+        else {
+            console.log("sdasdsadasd")
+            content3.classList.add('inprogress-color-code');
+        }
+    content3.textContent = "";
+    container3.appendChild(content3);
 
 
     //document.getElementById("card").innerHTML +=  myLibrary[i].title;
@@ -64,5 +77,10 @@ function addBooktoLibrary() {
     modal.style.display = "none";
 }
 
-
-
+document.getElementById('completeCheckbox').addEventListener('change', function(e) {
+    console.log("sd");
+    if (this.checked) {
+        document.getElementById('newCurrentPage').value = Math.max(document.getElementById('newTotalPages').value,document.getElementById('newCurrentPage').value);
+        document.getElementById('newTotalPages').value = Math.max(document.getElementById('newTotalPages').value,document.getElementById('newCurrentPage').value);
+    }
+})

@@ -7,6 +7,9 @@
     </style>
 
     <head>
+        <div id="navbar">
+            Home
+        </div>
         <title> 
             Library App
         </title>
@@ -37,10 +40,10 @@
                         <p> Author </p>
                         <input type="text" id='newAuthor'>
                         <p> Current Page </p>
-                        <input type="text" id='newCurrentPage'>
+                        <input type="number" id='newCurrentPage' min="0">
                         <p> Total Page(s) </p>
-                        <input type="text" id='newTotalPages'>
-                        <input type="checkbox"> Completed
+                        <input type="number" id='newTotalPages' min="0">
+                        <input type="checkbox" id="completeCheckbox" checked='false'> Completed
                         <p></p>
                         <button type="button" onclick=addBooktoLibrary() class='submit'>Submit</button>
                     </form>
