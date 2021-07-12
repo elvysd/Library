@@ -11,39 +11,53 @@ function Book(title, author, completedPages, totalPages) {
 }
 
 var modal = document.getElementById("myModal");
+var modal2 = document.getElementById("myModal2");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+//var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+var span2 = document.getElementsByClassName("close")[1];
 
 function openModal() {
     modal.style.display = "block";
 }
+function openModal2() {
+    modal2.style.display = "block";
+}
 
 span.onclick = function() {
     modal.style.display = "none";
+    modal2.style.display = "none";
+}
+span2.onclick = function() {
+    modal.style.display = "none";
+    modal2.style.display = "none";
 }
 
+
 window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target == modal || event.target == modal2) {
       modal.style.display = "none";
+      modal2.style.display = "none";
     }
   } 
 
-  var card = document.getElementsByClassName("flex-container");
 
-  var cardClick = function() {
-      var attribute = document.getElementById("flex-container").getAttribute("info-box"); ;
-      console.log(attribute)
-      alert(attribute);
-  };
+
+ function reply_click() 
+    {
+        console.log(myLibrary[0].title);
+        modal2.style.display = "block";
+        //alert(document.querySelectorAll('flex-container')[0]).innerHTML;
+    }
+
+
 
 let i = 0;
 function addBooktoLibrary() {
     let title = document.getElementById("newTitle").value;
-    console.log(title)
     let author = document.getElementById('newAuthor').value;
     let completedPages = document.getElementById('newCurrentPage').value;
     let totalPages = document.getElementById('newTotalPages').value;
@@ -54,8 +68,12 @@ function addBooktoLibrary() {
     const container = document.querySelector('#container');
     const content = document.createElement('div');
     content.classList.add('flex-container');
+    content.value = myLibrary[i];
+    input = myLibrary[i];
+
     content.textContent = myLibrary[i].title;
     container.appendChild(content);
+    content.setAttribute("onclick", "reply_click()");
     
     const container2 = document.querySelectorAll('.flex-container')[i];
     const content2 = document.createElement('p');
@@ -66,14 +84,11 @@ function addBooktoLibrary() {
     const container3 = document.querySelectorAll('.flex-container')[i];
     const content3 = document.createElement('p');
         if (Number(completedPages) >= Number(totalPages)) {
-            console.log(typeof(completedPages))
-            console.log(typeof(totalPages))
             content3.classList.add('color-code');
         }
         else if (Number(completedPages) == 0)
             content3.classList.add('incomplete-color-code');
         else {
-            console.log("sdasdsadasd")
             content3.classList.add('inprogress-color-code');
         }
     content3.textContent = "";
@@ -86,12 +101,9 @@ function addBooktoLibrary() {
 
     // book1.sayBook();
     modal.style.display = "none";
-    
-    card = document.getElementsByClassName("flex-container");
-    for (var z = 0; z < card.length; z++) {
-        card[z].addEventListener('click', cardClick, false);
+
     }
-}
+
 
 document.getElementById('completeCheckbox').addEventListener('change', function(e) {
     console.log("sd");

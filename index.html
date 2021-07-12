@@ -35,6 +35,7 @@
                     <span class="close">x</span>
                     <form>
                         <h2> Add New Book</h2>
+
                         <p> Book Title </p>
                         <input type="text" id='newTitle'>
                         <p> Author </p>
@@ -43,9 +44,18 @@
                         <input type="number" id='newCurrentPage' min="0">
                         <p> Total Page(s) </p>
                         <input type="number" id='newTotalPages' min="0">
-                        <input type="checkbox" id="completeCheckbox" checked='false'> Completed
+                        <input type="checkbox" id="completeCheckbox" > Completed
                         <p></p>
                         <button type="button" onclick=addBooktoLibrary() class='submit'>Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="myModal2" class="modal2">
+                <div class="modal-content2">
+                    <span class="close">x</span>
+                    <form>
+                        <h2> Book Title</h2>
                     </form>
                 </div>
             </div>
