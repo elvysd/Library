@@ -3,7 +3,6 @@
     padding: 0;
     margin: 0;
 }
-
 /* The Modal (background) */
 .modal, .modal2 {
   display: none; /* Hidden by default */
@@ -17,16 +16,15 @@
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-  
   /* Modal Content/Box */
 .modal-content, .modal-content2 {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   width: 80%; /* Could be more or less, depending on screen size */
 }
-  
   /* The Close Button */
 .close {
   cursor: pointer;
@@ -39,8 +37,6 @@
   font-size: 28px;
   font-weight: bold;
 }
-
-
 #container {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   flex-wrap: wrap;
@@ -49,10 +45,7 @@
   justify-content: center;
   margin-right: auto;
   margin-left: auto;
-
-
 }
-
 .flex-container {
   flex: 1 0 25%;
   max-width: 28%;
@@ -63,34 +56,28 @@
   justify-content: space-between;
   text-indent: 5%;
 }
-
 .flex-container:hover {
   background-color: rgb(236, 236, 236);
   cursor: pointer;
-
 }
-
 .color-code {
   width: 100%;
   height: 5%;
   background-color: #43a047;
   margin-top: 15px;
 }
-
 .inprogress-color-code {
   width: 100%;
   height: 5%;
   background-color: #fbc02d;
   margin-top: 15px;
 }
-
 .incomplete-color-code {
   width: 100%;
   height: 5%;
   background-color: #d32f2f;
   margin-top: 15px;
 }
-
 #navbar {
   position: fixed;
   background-color: #00701a;
@@ -101,7 +88,6 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   color: white;
 }
-
 header {
   background-color: #43a047;
   color: white;
@@ -112,14 +98,12 @@ header {
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-
 #base {
   text-indent: 10%;
   padding: 0%;
   margin: 0%;
   font-size: 24px;
 }
-
 #plus {
   height: 25px;
   padding: 15px;
@@ -134,11 +118,9 @@ header {
   font-size: 32px;
   cursor: pointer;
 }
-
 #plus:hover {
   font-weight: bold; 
 }
-
 .info-box {
   color: darkgray;
   font-style: italic; 
@@ -148,26 +130,20 @@ button {
   padding: 1%;
 }
 input {
-  
   margin-top: 1%;
   margin-bottom: 1%;
-  width: 94%;
+  width: 95%;
   padding: 2%;
 }
-
 .submit {
   display: flex;
   margin-top: 1%;
   margin-left: auto;
   margin-right: auto;
 }
-
 h2 {
   margin-top: 1%;
   margin-bottom: 1%;
-}
-#popupTitle, #popupAuthor {
-
 }
 #popupCurrent, #popupTotal {
   display: inline;
@@ -176,4 +152,46 @@ h2 {
   display: flex;
   margin-left: auto;
   margin-right: auto;
+}
+#done {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+#completeCheckbox, #completeCheckbox2 {
+  display: inline;
+  size: 2%;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+#noBooks {
+  padding: 5% 5% 0 5%;
+  text-align: center;
+  font-size: 350%;
+  display: block;
+  width: 100%;
+  text-indent: 0%;
+  color: darkgray;
+}
+#noBooks2 {
+  text-indent: 0;
+  font-size: 150%;
+  padding: 3% 5% 5% 5%;
+  display: flex;
+  text-align: center;
+  color: darkgray;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+#errorText, #errorText2 {
+  text-decoration: none;
+  text-align: center;
+  color: red;
+  display: none;
 }

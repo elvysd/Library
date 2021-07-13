@@ -8,7 +8,7 @@
 
     <head>
         <div id="navbar">
-            Home
+            <a href =""> Home </a>
         </div>
         <title> 
             Library App
@@ -22,6 +22,9 @@
 
     <main>
         <body>
+
+            <!-- Button to initiate adding a new book -->
+
             <form>
                 <div id="base">My Books
                 <button id ="plus" type="button" onclick=openModal()>
@@ -30,13 +33,15 @@
                 </div>
             </form>
 
+            <!-- Modal for adding a new book -->
+
             <div id="myModal" class="modal">
                 <div class="modal-content">
                     <span class="close">x</span>
                     <form>
-                        <h2> Add New Book</h2>
+                        <h2>Add New Book</h2>
 
-                        <p> Book Title </p>
+                        <p>Book Title</p>
                         <input type="text" id='newTitle'>
                         <p> Author </p>
                         <input type="text" id='newAuthor'>
@@ -44,34 +49,43 @@
                         <input type="number" id='newCurrentPage' min="0">
                         <p> Total Page(s) </p>
                         <input type="number" id='newTotalPages' min="0">
-                        <input type="checkbox" id="completeCheckbox" > Completed
-                        <p></p>
+                        <input type="checkbox" id="completeCheckbox"> 
+                        <div id='done'>Completed</div>
+                        <div id='errorText'> </div>
                         <button type="button" onclick=addBooktoLibrary() class='submit'>Submit</button>
                     </form>
                 </div>
             </div>
 
+            <!-- Modal for updating an exisiting book -->
+
             <div id="myModal2" class="modal2">
                 <div class="modal-content2">
                     <span class="close">x</span>
                     <form >
+                        <h2>Update Book</h2>
                         <input type="text" id="popupTitle">
                         <br>
                         <input type="text" id="popupContent"></p>
                         <input type="number" id="popupCurrent"></p>
-
                         <input type="number" id="popupTotal"></p>
-                        <p id="popupNumber">Book</p>
+                        <input type="checkbox" id="completeCheckbox2"> 
+                        <div id='done'>Completed</div>
+                        <div id='errorText2'> </div>
                         <button type="button" onclick=bookUpdate() id="popupChange" class='popupButton'>Update</button>
                     </form>
                 </div>
             </div>
 
-            <div id="container">
+            <!-- General container for all books -->
 
+            <div id="container">
+                <div id="noBooks">:(</div>
+                <div id="noBooks2">You have no books. Click on + to add books.</div>
             </div>
         </body>
     </main>
 
     <script src="script.js"></script> 
+    
 </html>
