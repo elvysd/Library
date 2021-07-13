@@ -46,13 +46,24 @@ window.onclick = function(event) {
 
 
 
- function reply_click() 
+ function reply_click(i) 
     {
-        console.log(myLibrary[0].title);
+        let number = i;
+        console.log(myLibrary[i].title);
         modal2.style.display = "block";
+        document.getElementById('popupTitle').value = myLibrary[i].title;
+        document.getElementById('popupContent').value = myLibrary[i].author;
+        document.getElementById('popupCurrent').value = myLibrary[i].completedPages;
+        document.getElementById('popupTotal').value = myLibrary[i].totalPages;
+        document.getElementById('popupNumber').innerHTML = number;
+        
         //alert(document.querySelectorAll('flex-container')[0]).innerHTML;
     }
 
+function bookUpdate() {
+    popupNumber = document.getElementById('popupNumber').innerHTML;
+    myLibrary[popupNumber].title = document.getElementById('popupTitle').value;
+}
 
 
 let i = 0;
@@ -73,7 +84,9 @@ function addBooktoLibrary() {
 
     content.textContent = myLibrary[i].title;
     container.appendChild(content);
-    content.setAttribute("onclick", "reply_click()");
+
+    content.setAttribute("onclick", "reply_click(" + i + ")");
+    content.setAttribute("id", i);
     
     const container2 = document.querySelectorAll('.flex-container')[i];
     const content2 = document.createElement('p');
@@ -112,6 +125,15 @@ document.getElementById('completeCheckbox').addEventListener('change', function(
         document.getElementById('newTotalPages').value = Math.max(document.getElementById('newTotalPages').value,document.getElementById('newCurrentPage').value);
     }
 })
+
+document.getElementById('popupChange').addEventListener('click', function(e) {
+
+        var test = document.getElementById('0');
+        test.append('tester')
+        modal2.style.display = "none";
+       
+    }
+)
 
 
 

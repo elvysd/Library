@@ -54,8 +54,15 @@
             <div id="myModal2" class="modal2">
                 <div class="modal-content2">
                     <span class="close">x</span>
-                    <form>
-                        <h2> Book Title</h2>
+                    <form >
+                        <input type="text" id="popupTitle">
+                        <br>
+                        <input type="text" id="popupContent"></p>
+                        <input type="number" id="popupCurrent"></p>
+
+                        <input type="number" id="popupTotal"></p>
+                        <p id="popupNumber">Book</p>
+                        <button type="button" onclick=bookUpdate() id="popupChange" class='popupButton'>Update</button>
                     </form>
                 </div>
             </div>
