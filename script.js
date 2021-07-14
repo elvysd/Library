@@ -65,16 +65,18 @@ function Book(title, author, completedPages, totalPages) {
 // Creating a book
 
 let i = 0;
+
 function addBooktoLibrary() {
+    console.log(typeof(document.getElementById('newCurrentPage').value));
     if (document.getElementById("newTitle").value.length >= 1
     && document.getElementById("newAuthor").value.length >= 1
     && document.getElementById('newCurrentPage').value <= document.getElementById('newTotalPages').value
     && document.getElementById('newTotalPages').value >= 1
-    && document.getElementById('newCurrentPage').value >= 1) {
+    && document.getElementById('newCurrentPage').value >= 0) {
         let title = document.getElementById("newTitle").value;
         let author = document.getElementById('newAuthor').value;
-        let completedPages = document.getElementById('newCurrentPage').value;
-        let totalPages = document.getElementById('newTotalPages').value;
+        let completedPages = Number(document.getElementById('newCurrentPage').value);
+        let totalPages = Number(document.getElementById('newTotalPages').value);
 
         let book1 = new Book(title, author, completedPages, totalPages);
         myLibrary.push(book1);
@@ -160,13 +162,13 @@ document.getElementById('completeCheckbox2').addEventListener('change', function
 function bookUpdate(i) {
 
     s = Number(document.getElementById('popupCurrent').value);
-    t =  Number(document.getElementById('popupTotal').value)
+    t = Number(document.getElementById('popupTotal').value);
 
     if (document.getElementById('popupTitle').value.length >= 1
-    &&  document.getElementById('popupContent').value.length >= 1
+    && document.getElementById('popupContent').value.length >= 1
     && s <= t
     && t >= 1
-    && t >= 1) {
+    && s >= 0) {
 
 
         var test = document.getElementById(i);
@@ -198,8 +200,8 @@ function bookUpdate(i) {
     
         myLibrary[i].title = document.getElementById('popupTitle').value;
         myLibrary[i].author = document.getElementById('popupContent').value;
-        myLibrary[i].completedPages = document.getElementById('popupCurrent').value;
-        myLibrary[i].totalPages = document.getElementById('popupTotal').value;
+        myLibrary[i].completedPages = Number(document.getElementById('popupCurrent').value);
+        myLibrary[i].totalPages = Number(document.getElementById('popupTotal').value);
         modal2.style.display = "none";
         document.getElementById('errorText2').style.display="None";
     }
